@@ -1,6 +1,14 @@
+<%
+    if (request.getSession().getAttribute("unm") == null)//session.getAttribute("Userid")
+    {
+        response.sendRedirect("index.html");
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
    
@@ -8,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title>Live Dinner Restaurant - Responsive HTML5 Template</title>  
+    <title>FoodieVerse - order food online</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -78,7 +86,7 @@
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
 						<h2>Special Menu</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<p>Explore delicious foods</p>
 					</div>
 				</div>
 			</div>
@@ -101,9 +109,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-01.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Drinks 1</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $7.79</h5>
+											<h4>Thandai</h4>
+                                                                                        <p><a  class="btn btn-primary" href="payment.jsp?a=%20thandai%20&b=%2040%20">Order</a></p>
+											<h5> Rs.40</h5>
 										</div>
 									</div>
 								</div>
@@ -112,9 +120,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-02.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Drinks 2</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $9.79</h5>
+											<h4>Milkshake</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20MilkShake%20&b=%2050%20">Order</a></p>
+											<h5> Rs.50</h5>
 										</div>
 									</div>
 								</div>
@@ -123,9 +131,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-03.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Drinks 3</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $10.79</h5>
+											<h4>Lemonade</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Lemonade%20&b=%2060%20">Order</a></p>
+											<h5> Rs.60</h5>
 										</div>
 									</div>
 								</div>
@@ -134,9 +142,10 @@
 									<div class="gallery-single fix">
 										<img src="images/img-04.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Lunch 1</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $15.79</h5>
+                                                                                    <h4>Hydrabadi Biryani </h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Hydrabadi_Biryani%20&b=%20150%20">Order</a></p>
+											<h5> Rs. 150</h5>
+                                                                                        
 										</div>
 									</div>
 								</div>
@@ -145,9 +154,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-05.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Lunch 2</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $18.79</h5>
+											<h4>Butter Chicken</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Butter_Chicken%20&b=%20400%20">Order</a></p>
+											<h5> Rs.400</h5>
 										</div>
 									</div>
 								</div>
@@ -156,9 +165,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-06.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Lunch 3</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $20.79</h5>
+											<h4>Palak Paneer</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Palak_Paneer%20&b=%20200%20">Order</a></p>
+											<h5> Rs.200</h5>
 										</div>
 									</div>
 								</div>
@@ -167,9 +176,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-07.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Dinner 1</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $25.79</h5>
+											<h4>Lemon Chicken</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Lemon_Chicken%20&b=%20350%20">Order</a></p>
+											<h5> Rs.350</h5>
 										</div>
 									</div>
 								</div>
@@ -178,9 +187,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-08.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Dinner 2</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $22.79</h5>
+											<h4>Chettinad Fish Fry</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Chettinad_fish%20&b=%20500%20">Order</a></p>
+											<h5> Rs.500</h5>
 										</div>
 									</div>
 								</div>
@@ -189,9 +198,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-09.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Dinner 3</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $24.79</h5>
+											<h4>Dum Aloo Lakhnawi</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Dum_Aloo_Lakhnawi%20&b=%20250%20">Order</a></p>
+											<h5> Rs.250</h5>
 										</div>
 									</div>
 								</div>
@@ -204,9 +213,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-01.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Drinks 1</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $7.79</h5>
+											<h4>Thandai</h4>
+                                                                                        <p><a  class="btn btn-primary" href="payment.jsp?a=%20thandai%20&b=%2040%20">Order</a></p>
+											<h5> Rs.40</h5>
 										</div>
 									</div>
 								</div>
@@ -215,9 +224,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-02.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Drinks 2</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $9.79</h5>
+											<h4>Milkshake</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20MilkShake%20&b=%2050%20">Order</a></p>
+											<h5> Rs.50</h5>
 										</div>
 									</div>
 								</div>
@@ -226,9 +235,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-03.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Drinks 3</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $10.79</h5>
+											<h4>Lemonade</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Lemonade%20&b=%2060%20">Order</a></p>
+											<h5> Rs.60</h5>
 										</div>
 									</div>
 								</div>
@@ -241,9 +250,10 @@
 									<div class="gallery-single fix">
 										<img src="images/img-04.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Lunch 1</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $15.79</h5>
+                                                                                    <h4>Hydrabadi Biryani </h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Hydrabadi_Biryani%20&b=%20150%20">Order</a></p>
+											<h5> Rs. 150</h5>
+                                                                                        
 										</div>
 									</div>
 								</div>
@@ -252,9 +262,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-05.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Lunch 2</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $18.79</h5>
+											<h4>Butter Chicken</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Butter_Chicken%20&b=%20400%20">Order</a></p>
+											<h5> Rs.400</h5>
 										</div>
 									</div>
 								</div>
@@ -263,9 +273,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-06.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Lunch 3</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $20.79</h5>
+											<h4>Palak Paneer</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Palak_Paneer%20&b=%20200%20">Order</a></p>
+											<h5> Rs.200</h5>
 										</div>
 									</div>
 								</div>
@@ -277,9 +287,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-07.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Dinner 1</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $25.79</h5>
+											<h4>Lemon Chicken</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Lemon_Chicken%20&b=%20350%20">Order</a></p>
+											<h5> Rs.350</h5>
 										</div>
 									</div>
 								</div>
@@ -288,9 +298,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-08.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Dinner 2</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $22.79</h5>
+											<h4>Chettinad Fish Fry</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Chettinad_fish%20&b=%20500%20">Order</a></p>
+											<h5> Rs.500</h5>
 										</div>
 									</div>
 								</div>
@@ -299,9 +309,9 @@
 									<div class="gallery-single fix">
 										<img src="images/img-09.jpg" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4>Special Dinner 3</h4>
-											<p>Sed id magna vitae eros sagittis euismod.</p>
-											<h5> $24.79</h5>
+											<h4>Dum Aloo Lakhnawi</h4>
+											<p><a  class="btn btn-primary" href="payment.jsp?a=%20Dum_Aloo_Lakhnawi%20&b=%20250%20">Order</a></p>
+											<h5> Rs.250</h5>
 										</div>
 									</div>
 								</div>
@@ -321,7 +331,8 @@
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<h3>About Us</h3>
-					<p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui.</p>
+					<p>FoodieVerse helps you find and order food from wherever you are. How it works: Register or login on the website and explore the menu,When you find what you're looking for, you can place your order online free of charge. Oh, and we also give you access to reviews, coupons, special deals</p>
+                           
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<h3>Subscribe</h3>
@@ -342,9 +353,9 @@
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<h3>Contact information</h3>
-					<p class="lead">Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
-					<p class="lead"><a href="#">+01 2000 800 9999</a></p>
-					<p><a href="#"> info@admin.com</a></p>
+					<p class="lead">Mumbai</p>
+					<p class="lead"><a href="#">123456789</a></p>
+					<p><a href="#"> gausiya1403@gmail.com</a></p>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<h3>Opening hours</h3>
@@ -360,8 +371,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<p class="company-name">All Rights Reserved. &copy; 2018 <a href="#">Live Dinner Restaurant</a> Design By : 
-					<a href="">html design</a></p>
+						<p class="company-name">All Rights Reserved. &copy; 2022 <a href="#">FoodieVerse</a> Design By : 
+					<a href="">Gausiya</a></p>
 					</div>
 				</div>
 			</div>

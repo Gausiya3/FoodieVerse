@@ -53,9 +53,9 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbars-rs-food">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item  "><a class="nav-link" href="welcome.jsp">Home</a></li>
-                            <li class="nav-item "><a class="nav-link" href="menu.jsp">Menu</a></li>
-                            <li class="nav-item active"><a class="nav-link" href="uorder.jsp">Order</a></li>
+                            <li class="nav-item  "><a class="nav-link" href="Ahome.jsp">User List</a></li>
+                            <li class="nav-item "><a class="nav-link" href="AorderRequest.jsp">New Order</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="Alistorder.jsp">Order List</a></li>
                             <li class="nav-item"><a class="nav-link" href="logout.jsp">LogOut</a></li>
                         </ul>
                     </div>
@@ -113,39 +113,36 @@
             </div>
         </div>
         <!--==========================================================-->
-        <h1 style="margin-left: 600px;margin-top: 30px;margin-bottom: 30px;">My Order</h1>
+        <h1 style="margin-left: 600px;margin-top: 30px;margin-bottom: 30px;">Order List</h1>
         <div class="container">
             <table class="table">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">Sr No</th>
-                        <th scope="col">Food Name</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <%                        String unm = (String) session.getAttribute("unm").toString();
+                    <%               
                     int c = 1;
                         try {
-                            PreparedStatement pstmt = con.prepareStatement("select * from registration where cont=?");
-                            pstmt.setString(1, unm);
-                            ResultSet rs = pstmt.executeQuery();
-                            if (rs.next()) {
-                                String cnm = rs.getString(2);
-                                PreparedStatement pstmt1 = con.prepareStatement("select * from paymentdetail where unm=?");
-                                pstmt1.setString(1, cnm);
+                            
+                                PreparedStatement pstmt1 = con.prepareStatement("select * from paymentdetail where sts='Accepted'");
                                 ResultSet rs1 = pstmt1.executeQuery();
                                 while (rs1.next()) {
                     %>
                     <tr>
                         <th scope="row"><%=c++%></th>
+                        <th scope="row"><%= rs1.getString(2)%></th>
                         <th scope="row"><%= rs1.getString(3)%></th>
-                        <th scope="row"><%= rs1.getString(8)%></th>
+                        <th scope="row"><%= rs1.getString(4)%></th>
                     </tr>
 
                     <%
                                 }
-                            }
+                            
 
                         } catch (Exception e) {
                             System.out.println(e);

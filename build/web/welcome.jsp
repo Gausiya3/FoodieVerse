@@ -1,3 +1,9 @@
+<%
+    if (request.getSession().getAttribute("unm") == null)//session.getAttribute("Userid")
+    {
+        response.sendRedirect("index.html");
+    }
+%>
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>

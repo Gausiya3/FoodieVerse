@@ -1,3 +1,10 @@
+<%
+    if (request.getSession().getAttribute("unm") == null)//session.getAttribute("Userid")
+    {
+        response.sendRedirect("index.html");
+    }
+%>
+<%@ include file="DB_Connection.jsp"%>
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
     <head>
@@ -108,28 +115,45 @@
         <!--==========================================================-->
         <h1 style="margin-left: 600px;margin-top: 30px;margin-bottom: 30px;">My Order</h1>
         <div class="container">
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">Sr No</th>
-                    <th scope="col">Food Type</th>
-                    <th scope="col">Food Menu</th>
-                    <th scope="col">No. of plates</th>
-                    <th scope="col">Provider Name</th>
-                    <th scope="col">Owner Name</th>
-                    <th scope="col">Contact No</th>
-                </tr>
-            </thead>
-            <tbody>
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Sr No</th>
+                        <th scope="col">Food Name</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%                        String unm = (String) session.getAttribute("unm").toString();
+                    int c = 1;
+                        try {
+                            PreparedStatement pstmt = con.prepareStatement("select * from registration where cont=?");
+                            pstmt.setString(1, unm);
+                            ResultSet rs = pstmt.executeQuery();
+                            if (rs.next()) {
+                                String cnm = rs.getString(2);
+                                PreparedStatement pstmt1 = con.prepareStatement("select * from paymentdetail where unm=?");
+                                pstmt1.setString(1, cnm);
+                                ResultSet rs1 = pstmt1.executeQuery();
+                                while (rs1.next()) {
+                    %>
+                    <tr>
+                        <th scope="row"><%=c++%></th>
+                        <th scope="row"><%= rs1.getString(3)%></th>
+                        <th scope="row"><%= rs1.getString(8)%></th>
+                    </tr>
 
-                <tr>
-                    <th scope="row">qqq</th>
-                    <th scope="row">qqq</th><th scope="row">qqq</th><th scope="row">qqq</th>
-                    <th scope="row">qqq</th><th scope="row">qqq</th><th scope="row">qqq</th>
-                </tr>
+                    <%
+                                }
+                            }
 
-            </tbody>
-        </table>
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+                    %>
+
+                </tbody>
+            </table>
         </div>
         <!--==================================================================-->
 

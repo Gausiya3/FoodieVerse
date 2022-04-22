@@ -5,7 +5,13 @@
     String usernm = request.getParameter("rno");
     String pass = request.getParameter("pass");
     session.setAttribute("unm", usernm);
-    try 
+    if(usernm.equals("admin") && pass.equals("admin"))
+    {
+        response.sendRedirect("Ahome.jsp");
+    }
+    else
+    {
+        try 
         {
 
             PreparedStatement pstmt = con.prepareStatement("select * from registration where cont=? and pass=?");
@@ -36,4 +42,6 @@
                 </script>
             <%
         }
+    }
+    
 %>
